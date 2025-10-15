@@ -32,6 +32,16 @@
         </div>
         
         <div class="control-group">
+          <label for="pageSizeSelect">每页加载:</label>
+          <select id="pageSizeSelect" class="page-size-select">
+            <option value="50">50张</option>
+            <option value="100" selected>100张</option>
+            <option value="200">200张</option>
+            <option value="500">500张</option>
+          </select>
+        </div>
+        
+        <div class="control-group">
           <label>操作模式:</label>
           <div class="radio-group">
             <label class="radio-label">
@@ -84,6 +94,46 @@
     <div id="loadingOverlay" class="loading-overlay hidden">
       <div class="loading-spinner"></div>
       <p>正在加载图片...</p>
+    </div>
+  </div>
+  
+  <!-- 图片查看器 -->
+  <div id="imageViewer" class="image-viewer hidden">
+    <div class="viewer-overlay"></div>
+    <div class="viewer-container">
+      <!-- 关闭按钮 -->
+      <button class="viewer-close" title="关闭 (ESC)">✕</button>
+      
+      <!-- 导航按钮 -->
+      <button class="viewer-nav viewer-prev" title="上一张 (←)">‹</button>
+      <button class="viewer-nav viewer-next" title="下一张 (→)">›</button>
+      
+      <!-- 图片容器 -->
+      <div class="viewer-image-container">
+        <img id="viewerImage" class="viewer-image" src="" alt="图片预览">
+      </div>
+      
+      <!-- 图片信息 -->
+      <div class="viewer-info">
+        <div class="viewer-filename" id="viewerFilename">文件名.jpg</div>
+        <div class="viewer-details">
+          <span id="viewerIndex">1 / 100</span>
+          <span class="separator">•</span>
+          <span id="viewerSize">加载中...</span>
+          <span class="separator">•</span>
+          <span id="viewerDimensions">加载中...</span>
+        </div>
+      </div>
+      
+      <!-- 底部工具栏 -->
+      <div class="viewer-toolbar">
+        <button class="viewer-tool-btn" id="viewerZoomIn" title="放大">🔍+</button>
+        <button class="viewer-tool-btn" id="viewerZoomOut" title="缩小">🔍-</button>
+        <button class="viewer-tool-btn" id="viewerZoomReset" title="重置">1:1</button>
+        <button class="viewer-tool-btn" id="viewerToggleSelect" title="选中/取消">
+          <span id="viewerSelectIcon">☐</span>
+        </button>
+      </div>
     </div>
   </div>
   

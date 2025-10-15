@@ -18,6 +18,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
   
   // 显示消息对话框
   showMessage: (type, title, message) => 
-    ipcRenderer.invoke('dialog:showMessage', { type, title, message })
+    ipcRenderer.invoke('dialog:showMessage', { type, title, message }),
+  
+  // 获取图片信息
+  getImageInfo: (imagePath) => ipcRenderer.invoke('file:getImageInfo', imagePath)
 });
 

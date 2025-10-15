@@ -1,11 +1,11 @@
 {
   "name": "picture-pick-x",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "一个强大的图片筛选器应用",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "electron . --watch"
+    "dev": "electron . --dev"
   },
   "keywords": [
     "electron",

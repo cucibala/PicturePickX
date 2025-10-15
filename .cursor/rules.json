@@ -1,0 +1,6 @@
+{
+  "$schema": "https://jsonschema.getcursor.com/rules.v1.json",
+  "rules": [
+    { "path": "rules/behavior.md" }
+  ]
+}

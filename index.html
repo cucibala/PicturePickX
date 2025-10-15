@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PicturePickX - 图片筛选器</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- 头部控制面板 -->
+    <header class="header">
+      <div class="header-top">
+        <h1 class="app-title">📸 PicturePickX</h1>
+        <div class="folder-controls">
+          <div class="folder-group">
+            <button id="selectSourceBtn" class="btn btn-primary">📁 选择源文件夹</button>
+            <div id="sourcePath" class="folder-path">未选择</div>
+          </div>
+          <div class="folder-group">
+            <button id="selectTargetBtn" class="btn btn-primary">📂 选择目标文件夹</button>
+            <div id="targetPath" class="folder-path">未选择</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="controls-panel">
+        <div class="control-group">
+          <label for="zoomSlider">缩放比例:</label>
+          <input type="range" id="zoomSlider" min="50" max="200" value="100" step="10">
+          <span id="zoomValue">100%</span>
+        </div>
+        
+        <div class="control-group">
+          <label>操作模式:</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="mode" value="copy" checked>
+              <span>复制</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="mode" value="move">
+              <span>移动</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="control-group">
+          <button id="selectAllBtn" class="btn btn-secondary">✅ 全选</button>
+          <button id="deselectAllBtn" class="btn btn-secondary">❌ 取消全选</button>
+          <button id="executeBtn" class="btn btn-success" disabled>
+            <span id="executeBtnText">复制选中图片到目标文件夹</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-label">总图片数:</span>
+          <span id="totalCount" class="stat-value">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">已选中:</span>
+          <span id="selectedCount" class="stat-value">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">未选中:</span>
+          <span id="unselectedCount" class="stat-value">0</span>
+        </div>
+      </div>
+    </header>
+    
+    <!-- 图片展示区域 -->
+    <main class="main-content">
+      <div id="imageGrid" class="image-grid">
+        <div class="empty-state">
+          <div class="empty-icon">🖼️</div>
+          <p>请选择源文件夹以加载图片</p>
+        </div>
+      </div>
+    </main>
+    
+    <!-- 加载提示 -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+      <div class="loading-spinner"></div>
+      <p>正在加载图片...</p>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
+

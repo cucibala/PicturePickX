@@ -217,6 +217,9 @@ async function loadImages() {
     appState.selectedImages.clear();
     appState.currentPage = 0;
     
+    // 清空图片网格
+    elements.imageGrid.innerHTML = '';
+    
     // 初始加载第一页
     loadMoreImages();
     updateStats();

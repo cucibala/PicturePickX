@@ -22,7 +22,7 @@ function createWindow() {
   mainWindow.loadFile('index.html');
   
   // 开发者工具（用于调试）
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
